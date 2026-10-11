@@ -1,0 +1,47 @@
+struct node {
+	int data;
+	vector<*node> children;
+}
+
+bool nodeVisited(vector<node> visited, node n){
+	for(int a = 0; a < visited.size(); a++){
+		if(n->data == visited[a->data]){	
+			return 1;
+		} 
+	}
+	return 0;
+}
+
+vector<int> dfs (node *start){
+	
+	stack<node> st;
+vector<node> visited;	
+vector<int> result;
+
+	for(node n : start->children){
+	      if(!nodeVisited(visited, n->data){
+		st.push(n);
+		}
+
+	while(!st.empty()){
+		node temp = st.top()
+		st.pop()
+	
+		if(!nodeVisited(visited, temp)){
+			result.push_back(temp->data);
+`			visited.push_back(temp);
+			}
+
+		for(node a : temp->children){
+			if(!nodeVisited(visited, temp)){
+				st.push(a);
+				}
+			}
+			
+		}
+
+	return result;
+}
+
+
+int main(){
